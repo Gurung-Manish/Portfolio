@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/themes/colors.dart';
+
+import '../utils/const.dart';
 
 class TabletLayout extends StatefulWidget {
   const TabletLayout({super.key});
@@ -10,8 +13,11 @@ class TabletLayout extends StatefulWidget {
 class _TabletLayoutState extends State<TabletLayout> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.blue,
+    return Scaffold(
+      appBar: mobileAppBar,
+      drawer: mobileDrawer,
+      backgroundColor: ColorPallete.lightBackground,
+      body: Container(),
     );
   }
 }

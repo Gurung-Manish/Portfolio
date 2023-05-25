@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
-var mobileAppBar = AppBar(
-  backgroundColor: Colors.grey[900],
-);
+var mobileAppBar = AppBar();
 
-var mobileDrawer = Drawer(
-  backgroundColor: Colors.grey[100],
-  child: const Column(
+var mobileDrawer = const Drawer(
+  child: Column(
     children: [
       ListTile(
         contentPadding: EdgeInsets.all(5.0),

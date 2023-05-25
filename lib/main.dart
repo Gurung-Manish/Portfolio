@@ -3,6 +3,7 @@ import 'package:portfolio/responsive/mobile_layout.dart';
 import 'package:portfolio/responsive/responsive_layout.dart';
 import 'package:portfolio/responsive/tablet_layout.dart';
 import 'package:portfolio/responsive/web_layout.dart';
+import 'package:portfolio/utils/themes/theme.dart';
 
 void main() {
   runApp(const MyPortfolio());
@@ -13,9 +14,12 @@ class MyPortfolio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ResponsiveLayout(
+      theme: PortfolioTheme.lightTheme,
+      darkTheme: PortfolioTheme.darkTheme,
+      themeMode: ThemeMode.system,
+      home: const ResponsiveLayout(
         mobileLayout: MobileLayout(),
         tabletLayout: TabletLayout(),
         webLayout: WebLayout(),
