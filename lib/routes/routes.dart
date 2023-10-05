@@ -1,9 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:portfolio/features/home/presentation/pages/home.dart';
-import 'package:portfolio/features/projects/presentation/pages/projects.dart';
-import 'package:portfolio/features/splash/presentation/pages/splash_page.dart';
+import 'package:portfolio/pages/home/pages/home_page.dart';
+import 'package:portfolio/pages/splash/pages/splash_page.dart';
 import 'package:portfolio/routes/routes_constant.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -25,10 +24,6 @@ class Routes {
         GoRoute(
           path: RoutesConstant.home,
           builder: (context, state) => const HomePage(),
-        ),
-        GoRoute(
-          path: RoutesConstant.projects,
-          builder: (context, state) => const ProjectsPage(),
         ),
       ]);
 }

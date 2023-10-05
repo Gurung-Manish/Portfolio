@@ -12,10 +12,9 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(milliseconds: 0), () async {
-      print("going to dashboard now.........");
+      print("going to home now.........");
       context.go(RoutesConstant.home);
     });
   }
@@ -23,7 +22,9 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(child: Text("Splash")),
+      body: Column(
+        children: [Text("Splash")],
+      ),
     );
   }
 }
