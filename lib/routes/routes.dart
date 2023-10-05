@@ -22,10 +22,6 @@ class Routes {
           builder: (context, state) => const SplashPage(),
         ),
         GoRoute(
-          path: RoutesConstant.home,
-          builder: (context, state) => const SplashPage(),
-        ),
-        GoRoute(
           path: RoutesConstant.projects,
           builder: (context, state) => const ProjectsPage(),
         ),

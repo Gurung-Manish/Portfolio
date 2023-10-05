@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/app.dart';
+import 'package:portfolio/bloc_provider.dart';
 
 void main() {
-  runApp(const App());
+  runApp(const BlocProviderContainer());
 }
