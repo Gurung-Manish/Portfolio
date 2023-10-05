@@ -10,8 +10,10 @@ class ProjectsPage extends StatefulWidget {
 class _ProjectsPageState extends State<ProjectsPage> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [Text("projects")],
+    return const Scaffold(
+      body: Column(
+        children: [Text("projects")],
+      ),
     );
   }
 }

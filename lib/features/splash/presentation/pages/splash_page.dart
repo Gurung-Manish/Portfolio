@@ -16,7 +16,7 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
     Future.delayed(const Duration(milliseconds: 0), () async {
       print("going to dashboard now.........");
-      context.go(RoutesConstant.projects);
+      context.go(RoutesConstant.home);
     });
   }
 
