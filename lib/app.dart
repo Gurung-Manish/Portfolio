@@ -9,6 +9,9 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: "Manish Gurung",
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          textTheme:
+              Theme.of(context).textTheme.apply(fontFamily: 'Montserrat')),
       home: MaterialApp.router(
         title: "Manish Gurung",
         debugShowCheckedModeBanner: false,
