@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/home/widgets/navigation_bar/navigation_bar.dart';
+import 'package:portfolio/pages/home/widgets/social_bar/social_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Row(
             children: [
-              CustomNavigationBar(),
+              const CustomNavigationBar(),
               Expanded(
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height,
@@ -39,14 +40,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              Container(
-                width: 200,
-                height: MediaQuery.of(context).size.height,
-                color: Colors.blue,
-                child: Column(
-                  children: [Text("data"), Text("data"), Text("data")],
-                ),
-              ),
+              const SocialBar()
             ],
           ),
         ],

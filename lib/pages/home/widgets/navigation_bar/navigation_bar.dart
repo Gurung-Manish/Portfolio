@@ -6,19 +6,22 @@ class CustomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
+      width: 100,
       height: MediaQuery.of(context).size.height,
       color: Colors.red,
-      child: const Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          NavBarItem(title: "Home"),
-          NavBarItem(title: "About"),
-          NavBarItem(title: "Projects"),
-          NavBarItem(title: "Education"),
-          NavBarItem(title: "Experience"),
-          NavBarItem(title: "Contact"),
-        ],
+      child: const Padding(
+        padding: EdgeInsets.symmetric(vertical: 100.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            NavBarItem(title: "Home"),
+            NavBarItem(title: "About"),
+            NavBarItem(title: "Projects"),
+            NavBarItem(title: "Education"),
+            NavBarItem(title: "Experience"),
+            NavBarItem(title: "Contact"),
+          ],
+        ),
       ),
     );
   }
