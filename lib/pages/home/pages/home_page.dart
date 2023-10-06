@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/home/widgets/navigation_bar/navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,24 +12,12 @@ class _HomePageState extends State<HomePage> {
   final PageController pageController = PageController();
   @override
   Widget build(BuildContext context) {
-    List navList = [
-      {
-        "title": "home",
-      }
-    ];
     return Scaffold(
       body: Column(
         children: [
           Row(
             children: [
-              Container(
-                width: 200,
-                height: MediaQuery.of(context).size.height,
-                color: Colors.red,
-                child: Column(
-                  children: [changeNavigation(), Text("data"), Text("data")],
-                ),
-              ),
+              CustomNavigationBar(),
               Expanded(
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height,
