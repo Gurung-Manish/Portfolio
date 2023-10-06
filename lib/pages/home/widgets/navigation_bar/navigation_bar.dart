@@ -33,6 +33,14 @@ class NavBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RotatedBox(quarterTurns: -1, child: Text(title));
+    return RotatedBox(
+      quarterTurns: -1,
+      child: Text(
+        title,
+        style: const TextStyle(
+          fontFamily: 'Montserrat',
+        ),
+      ),
+    );
   }
 }
