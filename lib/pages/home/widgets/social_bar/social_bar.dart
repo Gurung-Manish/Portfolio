@@ -8,26 +8,25 @@ class SocialBar extends StatelessWidget {
     return Container(
       width: 100,
       height: MediaQuery.of(context).size.height,
-      color: Colors.blue,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 60.0),
+        padding: const EdgeInsets.symmetric(vertical: 60.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(width: 1, height: 200, color: Colors.black),
-            SocialBarItem(
+            const SocialBarItem(
               iconPath: 'assets/icons/github.png',
             ),
-            SocialBarItem(
+            const SocialBarItem(
               iconPath: 'assets/icons/gmail.png',
             ),
-            SocialBarItem(
+            const SocialBarItem(
               iconPath: 'assets/icons/instagram.png',
             ),
-            SocialBarItem(
+            const SocialBarItem(
               iconPath: 'assets/icons/linkedin.png',
             ),
-            SocialBarItem(
+            const SocialBarItem(
               iconPath: 'assets/icons/youtube.png',
             ),
             Container(width: 1, height: 200, color: Colors.black),

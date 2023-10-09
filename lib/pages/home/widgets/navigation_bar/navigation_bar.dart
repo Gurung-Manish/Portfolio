@@ -1,25 +1,64 @@
 import 'package:flutter/material.dart';
 
 class CustomNavigationBar extends StatelessWidget {
-  const CustomNavigationBar({super.key});
+  final Function(int) onPageSelected;
+  final int currentPage;
+
+  const CustomNavigationBar(
+      {super.key, required this.onPageSelected, required this.currentPage});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 100,
       height: MediaQuery.of(context).size.height,
-      color: Colors.red,
-      child: const Padding(
-        padding: EdgeInsets.symmetric(vertical: 100.0),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 100.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            NavBarItem(title: "Home"),
-            NavBarItem(title: "About"),
-            NavBarItem(title: "Projects"),
-            NavBarItem(title: "Education"),
-            NavBarItem(title: "Experience"),
-            NavBarItem(title: "Contact"),
+            NavBarItem(
+              title: "Home",
+              isSelected: currentPage == 0,
+              onTap: () {
+                onPageSelected(0);
+              },
+            ),
+            NavBarItem(
+              title: "About",
+              isSelected: currentPage == 1,
+              onTap: () {
+                onPageSelected(1);
+              },
+            ),
+            NavBarItem(
+              title: "Projects",
+              isSelected: currentPage == 2,
+              onTap: () {
+                onPageSelected(2);
+              },
+            ),
+            NavBarItem(
+              title: "Education",
+              isSelected: currentPage == 3,
+              onTap: () {
+                onPageSelected(3);
+              },
+            ),
+            NavBarItem(
+              title: "Experience",
+              isSelected: currentPage == 4,
+              onTap: () {
+                onPageSelected(4);
+              },
+            ),
+            NavBarItem(
+              title: "Contact",
+              isSelected: currentPage == 5,
+              onTap: () {
+                onPageSelected(5);
+              },
+            ),
           ],
         ),
       ),
@@ -29,16 +68,32 @@ class CustomNavigationBar extends StatelessWidget {
 
 class NavBarItem extends StatelessWidget {
   final String title;
-  const NavBarItem({super.key, required this.title});
+  final bool isSelected; // Indicates if this item is currently selected
+  final VoidCallback onTap; // Callback when the item is tapped
+
+  const NavBarItem(
+      {super.key,
+      required this.title,
+      required this.isSelected,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return RotatedBox(
-      quarterTurns: -1,
-      child: Text(
-        title,
-        style: const TextStyle(
-          fontFamily: 'Montserrat',
+    return GestureDetector(
+      onTap: onTap,
+      child: RotatedBox(
+        quarterTurns: -1,
+        child: Text(
+          title,
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+            color: isSelected
+                ? Colors.black
+                : Colors.black, // Change color based on selection
+            fontWeight: isSelected
+                ? FontWeight.bold
+                : FontWeight.normal, // Bold if selected
+          ),
         ),
       ),
     );

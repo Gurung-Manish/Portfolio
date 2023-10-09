@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/home/sections/home/home_section.dart';
 import 'package:portfolio/pages/home/widgets/navigation_bar/navigation_bar.dart';
 import 'package:portfolio/pages/home/widgets/social_bar/social_bar.dart';
 
@@ -11,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final PageController pageController = PageController();
+  var currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,19 @@ class _HomePageState extends State<HomePage> {
         children: [
           Row(
             children: [
-              const CustomNavigationBar(),
+              CustomNavigationBar(
+                onPageSelected: (index) {
+                  setState(() {
+                    currentPage = index;
+                  });
+                  pageController.animateToPage(
+                    index,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.ease,
+                  );
+                },
+                currentPage: currentPage,
+              ),
               Expanded(
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height,
@@ -27,14 +41,21 @@ class _HomePageState extends State<HomePage> {
                     scrollDirection: Axis.vertical,
                     controller: pageController,
                     children: const <Widget>[
+                      HomeSection(),
                       Center(
-                        child: Text('First Page'),
+                        child: Text('About'),
                       ),
                       Center(
-                        child: Text('Second Page'),
+                        child: Text('Projects'),
                       ),
                       Center(
-                        child: Text('Third Page'),
+                        child: Text('Education'),
+                      ),
+                      Center(
+                        child: Text('Experience'),
+                      ),
+                      Center(
+                        child: Text('Contact'),
                       ),
                     ],
                   ),
