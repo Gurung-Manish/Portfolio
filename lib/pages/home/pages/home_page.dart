@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/pages/home/sections/education/education_section.dart';
 import 'package:portfolio/pages/home/sections/home/home_section.dart';
 import 'package:portfolio/pages/home/widgets/navigation_bar/navigation_bar.dart';
 import 'package:portfolio/pages/home/widgets/social_bar/social_bar.dart';
@@ -48,9 +49,7 @@ class _HomePageState extends State<HomePage> {
                       Center(
                         child: Text('Projects'),
                       ),
-                      Center(
-                        child: Text('Education'),
-                      ),
+                      EducationSection(),
                       Center(
                         child: Text('Experience'),
                       ),

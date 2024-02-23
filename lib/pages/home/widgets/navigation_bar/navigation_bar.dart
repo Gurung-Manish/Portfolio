@@ -10,7 +10,8 @@ class CustomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
+      color: Colors.red,
+      width: 50,
       height: MediaQuery.of(context).size.height,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 100.0),

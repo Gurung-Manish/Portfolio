@@ -6,7 +6,8 @@ class SocialBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
+      color: Colors.blue,
+      width: 50,
       height: MediaQuery.of(context).size.height,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 60.0),
