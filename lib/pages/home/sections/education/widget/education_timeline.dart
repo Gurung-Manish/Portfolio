@@ -19,24 +19,19 @@ class EducationTimeline extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 500,
+    return Container(
+      decoration: BoxDecoration(color: Colors.red),
+      height: 800,
       child: Timeline.tileBuilder(
         builder: TimelineTileBuilder.fromStyle(
-          contentsAlign: itemCount % 2 == 0
-              ? ContentsAlign.alternating
-              : ContentsAlign.basic,
+          contentsAlign: ContentsAlign.alternating,
           contentsBuilder: (context, index) => Padding(
             padding: const EdgeInsets.all(24.0),
-            child: Column(
-              children: [
-                Row(
-                  children: [Text("$startDate - $endDate")],
-                )
-              ],
+            child: Row(
+              children: [Text("$startDate - $endDate")],
             ),
           ),
-          itemCount: 2,
+          itemCount: itemCount,
         ),
       ),
     );

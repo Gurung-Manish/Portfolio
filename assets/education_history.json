@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "schoolName": "Kingston University",
+      "startDate": "2022",
+      "endDate": "2023",
+      "description": "M.Sc. Software Engineering (Distinction)"
+    },
+    {
+      "schoolName": "London Metropolitan University",
+      "startDate": "2018",
+      "endDate": "2021",
+      "description": "B.Sc. Hons in Computing (First Class Honours)"
+    }
+  ]
+}
