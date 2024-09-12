@@ -17,15 +17,18 @@ const Splash = () => {
   ];
 
   const [currentGreeting, setCurrentGreeting] = useState(0);
+  const [intervalDuration, setIntervalDuration] = useState(1000);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentGreeting(
-        (prevGreeting) => (prevGreeting + 1) % greetings.length
-      );
-    }, 1000); // change every 1 second
-    return () => clearInterval(interval); // cleanup on unmount
-  }, [greetings.length]);
+    if (currentGreeting < greetings.length - 1) {
+      const interval = setTimeout(() => {
+        setCurrentGreeting((prevGreeting) => prevGreeting + 1);
+        setIntervalDuration((prevDuration) => prevDuration * 0.8); // Reduce the interval time by 20%
+      }, intervalDuration); // Dynamic interval based on state
+
+      return () => clearTimeout(interval); // Cleanup timeout
+    }
+  }, [currentGreeting, intervalDuration, greetings.length]);
 
   return (
     <div class="splash">
