@@ -5,7 +5,7 @@ const Splash = () => {
   const greetings = [
     "Hello", // English
     "Bonjour", // French
-    "Namaste", // Nepali
+    "नमस्ते", // Nepali
     "Hola", // Spanish
     "你好", // Chinese (Nǐ hǎo)
     "こんにちは", // Japanese (Konnichiwa)
@@ -14,6 +14,12 @@ const Splash = () => {
     "Ciao", // Italian
     "Olá", // Portuguese
     "Привет", // Russian (Privet)
+    "Γειά σου", // Greek (Yia sou)
+    "नमस्ते", // Hindi
+    "مرحبا", // Arabic (Marhaban)
+    "שלום", // Hebrew (Shalom)
+    "Hej", // Swedish
+    "Merhaba", // Turkish
   ];
 
   const [currentGreeting, setCurrentGreeting] = useState(0);
