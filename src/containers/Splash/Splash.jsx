@@ -1,7 +1,9 @@
 import React from "react";
+import "./Splash.css";
 
 const Splash = () => {
-  return <div></div>;
+  const startLoader = () => {};
+  return <div class="splash">Hello</div>;
 };
 
 export default Splash;
