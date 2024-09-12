@@ -33,6 +33,9 @@ const Splash = () => {
       }, intervalDuration); // Dynamic interval based on state
 
       return () => clearTimeout(interval); // Cleanup timeout
+    } else {
+      // Action after the last greeting
+      alert("All greetings have been shown!");
     }
   }, [currentGreeting, intervalDuration, greetings.length]);
 

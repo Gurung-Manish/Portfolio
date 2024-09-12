@@ -9,4 +9,21 @@
 
 .splash_label {
   color: var(--color-white);
+  font-size: 4rem;
+  font-family: var(--font-base);
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1150px) {
+  .splash_label {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .splash_label {
+    font-size: 2rem;
+    font-weight: 700;
+  }
 }
