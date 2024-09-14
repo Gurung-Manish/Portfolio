@@ -1,10 +1,11 @@
 import React from "react";
-import { Splash } from "./containers";
+import { Splash, Home } from "./containers";
 
 const App = () => {
   return (
     <div>
       <Splash />
+      <Home />
     </div>
   );
 };
