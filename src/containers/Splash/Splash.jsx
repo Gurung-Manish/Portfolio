@@ -24,7 +24,7 @@ const Splash = ({ onFinish }) => {
   ];
 
   const [currentGreeting, setCurrentGreeting] = useState(0);
-  const [intervalDuration, setIntervalDuration] = useState(1000);
+  const [intervalDuration, setIntervalDuration] = useState(500);
   const splashRef = useRef(null);
 
   useEffect(() => {
@@ -38,10 +38,11 @@ const Splash = ({ onFinish }) => {
     } else {
       // Action after the last greeting
       // alert("All greetings have been shown!");
+
       gsap.to(splashRef.current, {
         y: "-100vh",
         // opacity: 0,
-        duration: 1.5,
+        duration: 0.8,
         ease: "power3.inOut",
         onComplete: onFinish, // Call onFinish to transition to Home
       });

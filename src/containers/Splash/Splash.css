@@ -12,10 +12,7 @@
   align-items: center;
   justify-content: center;
   z-index: 10; /* Ensure splash is on top of other components */
-  opacity: 1;
-  /* transition: opacity 1s ease; For fade-out effect */
 }
-
 .splash_label {
   color: var(--color-white);
   font-size: 4rem;
