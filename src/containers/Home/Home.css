@@ -1,0 +1,7 @@
+.home {
+  height: 100vh;
+  background-color: #fff; /* A contrasting background to differentiate from Splash */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
