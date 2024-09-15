@@ -40,9 +40,9 @@ const Splash = ({ onFinish }) => {
       // alert("All greetings have been shown!");
       gsap.to(splashRef.current, {
         y: "-100vh",
-        opacity: 0,
+        // opacity: 0,
         duration: 1.5,
-        ease: "bounce.out",
+        ease: "power3.inOut",
         onComplete: onFinish, // Call onFinish to transition to Home
       });
     }
