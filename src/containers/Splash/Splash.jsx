@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Splash.css";
+import { gsap } from "gsap";
 
-const Splash = () => {
+const Splash = ({ onFinish }) => {
   const greetings = [
     "Hello", // English
     "Bonjour", // French
@@ -24,6 +25,7 @@ const Splash = () => {
 
   const [currentGreeting, setCurrentGreeting] = useState(0);
   const [intervalDuration, setIntervalDuration] = useState(1000);
+  const splashRef = useRef(null);
 
   useEffect(() => {
     if (currentGreeting < greetings.length - 1) {
@@ -35,13 +37,20 @@ const Splash = () => {
       return () => clearTimeout(interval); // Cleanup timeout
     } else {
       // Action after the last greeting
-      alert("All greetings have been shown!");
+      // alert("All greetings have been shown!");
+      gsap.to(splashRef.current, {
+        y: "-100vh",
+        opacity: 0,
+        duration: 1.5,
+        ease: "bounce.out",
+        onComplete: onFinish, // Call onFinish to transition to Home
+      });
     }
-  }, [currentGreeting, intervalDuration, greetings.length]);
+  }, [currentGreeting, intervalDuration, greetings.length, onFinish]);
 
   return (
-    <div class="splash">
-      <p class="splash_label">{greetings[currentGreeting]}</p>
+    <div ref={splashRef} className="splash">
+      <p className="splash_label">{greetings[currentGreeting]}</p>
     </div>
   );
 };
