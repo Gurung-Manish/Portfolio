@@ -33,18 +33,23 @@
   align-items: center; /* Center content horizontally */
   justify-content: center; /* Center content vertically */
   width: 100%; /* Full width of the screen */
-  height: 100%; /* Full height of the screen */
+  height: 100vh; /* Full height of the screen */
   z-index: 2; /* Ensure the content appears above the hero image */
   text-align: center;
 }
 
 .home_content_text h3 {
   font-size: 3rem;
+  font-family: var(--font-base);
   color: white; /* Ensure contrast against the image */
   margin-bottom: 20px;
 }
 
 marquee {
-  font-size: 1.5rem;
-  color: white; /* Ensure the text is readable against the background */
+  position: absolute;
+  bottom: 0; /* Stick the marquee to the very bottom */
+  font-size: 15rem; /* Set a large font size */
+  color: white;
+  width: 100%; /* Ensure the marquee spans the full width */
+  text-align: center;
 }
