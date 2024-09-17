@@ -3,6 +3,7 @@
 :root {
   --font-base: "Fira Code", monospace;
   --color-gray: #141517;
+  --color-lightGray: #141517c4;
   --color-white: #ffffff;
 }
 

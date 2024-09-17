@@ -1,8 +1,50 @@
 /* Home.css */
 .home {
   height: 100vh;
-  background-color: #fff; /* A contrasting background to differentiate from Splash */
+  background-color: var(
+    --color-lightGray
+  ); /* A contrasting background to differentiate from Splash */
+
+  position: relative;
+}
+
+.home_hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1; /* Place hero behind the content */
+}
+
+.home_hero_picture {
+  position: absolute;
+  bottom: 0; /* Stick the image to the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center the image horizontally */
+  height: 95vh; /* Prevent image from exceeding 90% of the viewport height */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the image fits within the given bounds */
+}
+.home_content {
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  width: 100%; /* Full width of the screen */
+  height: 100%; /* Full height of the screen */
+  z-index: 2; /* Ensure the content appears above the hero image */
+  text-align: center;
+}
+
+.home_content_text h3 {
+  font-size: 3rem;
+  color: white; /* Ensure contrast against the image */
+  margin-bottom: 20px;
+}
+
+marquee {
+  font-size: 1.5rem;
+  color: white; /* Ensure the text is readable against the background */
 }
