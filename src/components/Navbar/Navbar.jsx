@@ -18,7 +18,7 @@ const Navbar = () => {
           <a href="#experience">Experience</a>
         </li>
         <li className="p__opensans">
-          <a href="#project">Projects</a>
+          <a href="#projects">Projects</a>
         </li>
         <li className="p__opensans">
           <a href="#contact">Contact</a>
