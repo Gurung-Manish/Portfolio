@@ -1,9 +1,8 @@
 /* Home.css */
 .home {
+  display: flex;
   height: 100vh;
   background-color: var(
     --color-lightGray
   ); /* A contrasting background to differentiate from Splash */
-
-  position: relative;
 }
