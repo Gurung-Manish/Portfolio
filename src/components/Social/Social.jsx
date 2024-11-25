@@ -5,7 +5,6 @@ import {
   FaYoutube,
   FaInstagram,
   FaRegEnvelope,
-  FaEnvelope,
 } from "react-icons/fa"; // Importing popular social icons from react-icons
 import "./Social.css";
 const Social = () => {
