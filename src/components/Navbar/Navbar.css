@@ -1,0 +1,40 @@
+/* Navbar.css */
+.app__navbar {
+  position: fixed; /* Keep the navbar fixed */
+  top: 50%; /* Vertically center */
+  left: 0; /* Place on the left side */
+  transform: translateY(-50%); /* Adjust for perfect vertical centering */
+  z-index: 100; /* Ensure it's above other content */
+  display: flex;
+  flex-direction: column; /* Stack navbar items vertically */
+  justify-content: space-between; /* Space out the items evenly */
+  align-items: center; /* Align the items to the center */
+  height: 100vh; /* Take up full height of the viewport */
+}
+
+.app__navbar-links {
+  list-style: none; /* Remove list bullets */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  justify-content: space-evenly; /* Evenly space the links */
+  height: 100%; /* Full height to spread the items evenly */
+}
+
+.app__navbar-links li {
+  padding: 15px 0; /* Add spacing between navbar items */
+}
+
+.app__navbar-links a {
+  font-size: 1.5rem; /* Set the font size */
+  color: white; /* Color for the text */
+  text-decoration: none; /* Remove underline */
+  transform: rotate(-90deg); /* Rotate the text */
+  white-space: nowrap; /* Prevent the text from wrapping */
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.app__navbar-links a:hover {
+  color: var(--color-hover); /* Change color on hover */
+}

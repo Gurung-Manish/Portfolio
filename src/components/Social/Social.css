@@ -1,0 +1,22 @@
+/* SocialIcons.css */
+.app__social {
+  position: fixed; /* Keep the icons on the right side, even when scrolling */
+  top: 50%; /* Vertically center */
+  right: 0; /* Place on the right side instead of left */
+  transform: translateY(-50%); /* Adjust for perfect vertical centering */
+  z-index: 100; /* Ensure it's above other content */
+  display: flex;
+  flex-direction: column; /* Stack icons vertically */
+  align-items: center;
+}
+
+.app__social-icon {
+  font-size: 1.5rem; /* Size of the icons */
+  margin: 15px 0; /* Spacing between icons */
+  color: white; /* Change this to match your theme */
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.app__social-icon:hover {
+  color: var(--color-lightGray); /* Change color on hover */
+}

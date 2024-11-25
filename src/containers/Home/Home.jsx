@@ -1,6 +1,5 @@
 import React from "react";
-import hero from "../../assets/hero.png";
-import { Navbar } from "../../components";
+import { Navbar, Social } from "../../components";
 import {
   Projects,
   Experience,
@@ -14,13 +13,23 @@ const Home = () => {
   return (
     <div className="home" id="home">
       {/* Left Navbar */}
-      <Navbar />
-      {/* Main Content */}
-      <About />
-      <Education />
-      <Experience />
-      <Projects />
-      <Contact />
+      <div className="home__navbar">
+        <Navbar />
+      </div>
+
+      {/* Main Content (Centered) */}
+      <div className="home__content">
+        <About />
+        <Education />
+        <Experience />
+        <Projects />
+        <Contact />
+      </div>
+
+      {/* Right Social */}
+      <div className="home__social">
+        <Social />
+      </div>
     </div>
   );
 };

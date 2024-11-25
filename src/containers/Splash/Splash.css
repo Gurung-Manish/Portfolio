@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10; /* Ensure splash is on top of other components */
+  z-index: 99999; /* Ensure splash is on top of other components */
 }
 .splash_label {
   color: var(--color-white);
