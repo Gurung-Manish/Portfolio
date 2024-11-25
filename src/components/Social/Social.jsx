@@ -1,5 +1,12 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaYoutube, FaInstagram } from "react-icons/fa"; // Importing popular social icons from react-icons
+import {
+  FaLinkedin,
+  FaGithub,
+  FaYoutube,
+  FaInstagram,
+  FaRegEnvelope,
+  FaEnvelope,
+} from "react-icons/fa"; // Importing popular social icons from react-icons
 import "./Social.css";
 const Social = () => {
   return (
@@ -18,6 +25,9 @@ const Social = () => {
         rel="noopener noreferrer"
       >
         <FaGithub className="app__social-icon" />
+      </a>
+      <a href="mailto:manishgrg496@gmail.com" rel="noopener noreferrer">
+        <FaRegEnvelope className="app__social-icon" />
       </a>
       <a
         href="https://www.youtube.com/@_manish_gurung_"
