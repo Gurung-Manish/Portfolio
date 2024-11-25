@@ -7,4 +7,5 @@
   justify-content: flex-start; /* Align items at the top */
   align-items: stretch; /* Ensure sections stretch across the full width */
   background-color: var(--color-lightGray); /* Set background color */
+  scroll-behavior: smooth;
 }
