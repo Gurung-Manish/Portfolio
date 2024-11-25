@@ -4,6 +4,7 @@ import "./Social.css";
 const Social = () => {
   return (
     <div className="app__social">
+      <div className="app_social-dash" />
       <a
         href="https://www.linkedin.com/in/-manish-gurung/"
         target="_blank"
@@ -32,6 +33,7 @@ const Social = () => {
       >
         <FaInstagram className="app__social-icon" />
       </a>
+      <div className="app_social-dash" />
     </div>
   );
 };

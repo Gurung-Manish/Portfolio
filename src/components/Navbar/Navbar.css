@@ -27,14 +27,20 @@
 }
 
 .app__navbar-links a {
-  font-size: 1.5rem; /* Set the font size */
+  font-size: 1rem; /* Set the font size */
   color: white; /* Color for the text */
   text-decoration: none; /* Remove underline */
-  transform: rotate(-90deg); /* Rotate the text */
-  white-space: nowrap; /* Prevent the text from wrapping */
   transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
 
 .app__navbar-links a:hover {
   color: var(--color-hover); /* Change color on hover */
+}
+
+/* Add a wrapper to rotate the text */
+.app__navbar-links .navbar-item-wrapper {
+  transform: rotate(-90deg); /* Rotate the text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
