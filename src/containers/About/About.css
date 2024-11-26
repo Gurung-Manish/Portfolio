@@ -29,7 +29,6 @@
 .about__image img {
   width: auto;
   height: 80vh; /* Control image height */
-
   object-fit: contain; /* Proper scaling */
 }
 
