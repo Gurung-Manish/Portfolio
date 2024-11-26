@@ -1,9 +1,7 @@
-/* About.css */
 .about {
   display: flex;
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
-
   min-height: 100vh; /* Full height of viewport */
   background-color: green; /* Temporary background color */
   position: relative; /* For watermark positioning */
@@ -16,20 +14,22 @@
   align-items: center; /* Center vertically */
   justify-content: space-between; /* Distribute space evenly */
   width: 100%;
+  min-height: 100vh;
   max-width: 1200px; /* Control max width */
 }
 
 .about__image {
   flex: 1; /* Occupy half the width */
   display: flex; /* Center image */
-  align-items: center;
+  align-items: flex-end; /* Align image to the bottom */
+  height: 100vh;
   justify-content: flex-end;
 }
 
 .about__image img {
-  width: 80%; /* Make the image larger */
-  max-width: 500px; /* Prevent it from being too large */
-  height: auto; /* Maintain aspect ratio */
+  width: auto;
+  height: 80vh; /* Control image height */
+
   object-fit: contain; /* Proper scaling */
 }
 
@@ -42,13 +42,13 @@
 }
 
 .about__text h1 {
-  font-size: 3.5rem; /* Increase font size */
+  font-size: 3rem; /* Increase font size */
   font-weight: bold;
   margin: 0 0 10px 0;
 }
 
 .about__text p {
-  font-size: 1.2rem; /* Slightly larger text */
+  font-size: 1rem; /* Slightly larger text */
   margin-top: 20px;
   line-height: 1.8;
   text-align: justify;
@@ -72,12 +72,12 @@
 
 .about__watermark {
   position: absolute;
-  top: 40%; /* Position below main content */
+  bottom: 20%; /* Position closer to the bottom */
   left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   font-size: 10rem; /* Large text */
   font-weight: bold;
   color: red; /* Subtle watermark effect */
-  z-index: -1; /* Place below main content */
+  z-index: 1; /* Place below main content */
   user-select: none; /* Make non-selectable */
 }
