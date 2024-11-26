@@ -3,9 +3,10 @@
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
   min-height: 100vh; /* Full height of viewport */
-  background-color: green; /* Temporary background color */
+  background-color: var(--color-bg-black); /* Temporary background color */
   position: relative; /* For watermark positioning */
   overflow: hidden; /* Prevent overflow issues */
+  z-index: 1; /* Keep the background layer below the content */
 }
 
 .about__body {
@@ -16,6 +17,8 @@
   width: 100%;
   min-height: 100vh;
   max-width: 1200px; /* Control max width */
+  position: relative; /* Ensure stacking context */
+  z-index: 2; /* Above watermark but below content */
 }
 
 .about__image {
@@ -24,12 +27,15 @@
   align-items: flex-end; /* Align image to the bottom */
   height: 100vh;
   justify-content: flex-end;
+  position: relative; /* Ensure z-index is effective */
+  z-index: 3; /* Above watermark */
 }
 
 .about__image img {
   width: auto;
   height: 80vh; /* Control image height */
   object-fit: contain; /* Proper scaling */
+  z-index: 3; /* Above watermark */
 }
 
 .about__text {
@@ -38,18 +44,24 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative; /* Ensure z-index is effective */
+  z-index: 3; /* Above watermark */
 }
 
 .about__text h1 {
+  color: white;
   font-size: 3rem; /* Increase font size */
   font-weight: bold;
+  z-index: 3; /* Above watermark */
   margin: 0 0 10px 0;
 }
 
 .about__text p {
+  color: white;
   font-size: 1rem; /* Slightly larger text */
   margin-top: 20px;
   line-height: 1.8;
+  z-index: 3; /* Above watermark */
   text-align: justify;
 }
 
@@ -62,6 +74,7 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  z-index: 3; /* Above watermark */
   align-self: flex-start; /* Align button to the left */
 }
 
@@ -70,13 +83,12 @@
 }
 
 .about__watermark {
+  min-width: 100vh;
   position: absolute;
-  bottom: 20%; /* Position closer to the bottom */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, 0);
-  font-size: 10rem; /* Large text */
+  top: 10%;
+  font-size: 6rem; /* Large text */
   font-weight: bold;
-  color: red; /* Subtle watermark effect */
-  z-index: 1; /* Place below main content */
+  color: var(--color-orange-highlight); /* Subtle watermark effect */
+  z-index: 1; /* Below content but above the background */
   user-select: none; /* Make non-selectable */
 }

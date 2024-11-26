@@ -5,7 +5,9 @@ import heroImage from "../../assets/hero.png";
 const About = () => {
   return (
     <div className="about" id="about">
-      <div className="about__watermark">ABOUT ME</div>
+      <div className="about__watermark">
+        <h1>ABOUT ME</h1>
+      </div>
       <div className="about__body">
         <div className="about__image">
           <img src={heroImage} alt="Manish Gurung" />

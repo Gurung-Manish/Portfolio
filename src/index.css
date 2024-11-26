@@ -6,9 +6,14 @@
   font-family: "Montserrat", sans-serif;
   --color-gray: #141517;
   --color-lightGray: #141517c4;
+  --color-bg-gray: #292929;
+  --color-bg-black: #1b1b1b;
+  --color-primary-orange: #ffa31a;
+  --color-gray-highlight: #808080;
   --color-white: #ffffff;
+  --color-orange: #fe8008;
+  --color-orange-highlight: rgb(254, 128, 8, 0.2);
 }
-
 * {
   box-sizing: border-box;
   padding: 0;
