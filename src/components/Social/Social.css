@@ -25,5 +25,5 @@
 }
 
 .app__social-icon:hover {
-  color: var(--color-lightGray); /* Change color on hover */
+  color: var(--color-primary-orange); /* Change color on hover */
 }

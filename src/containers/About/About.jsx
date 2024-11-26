@@ -1,8 +1,16 @@
 import React from "react";
 import "./About.css";
 import heroImage from "../../assets/hero.png";
+import CV from "../../assets/Manish_Gurung_CV.pdf";
 
 const About = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = CV;
+    link.download = "Manish_Gurung_CV.pdf";
+    link.click();
+  };
+
   return (
     <div className="about" id="about">
       <div className="about__watermark">
@@ -21,7 +29,9 @@ const About = () => {
             complex problems through innovative approaches and working
             collaboratively in Agile teams.
           </p>
-          <button className="about__button">Download CV</button>
+          <button className="about__button" onClick={handleDownload}>
+            Get CV
+          </button>
         </div>
       </div>
     </div>
