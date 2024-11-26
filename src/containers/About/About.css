@@ -1,57 +1,56 @@
 /* About.css */
 .about {
   display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
 
-  align-items: center; /* Horizontally center the content */
-  justify-content: center; /* Vertically center the content */
-  padding: 20px;
-  min-height: 100vh; /* Full height of the viewport */
-  background-color: green; /* Set background color */
+  min-height: 100vh; /* Full height of viewport */
+  background-color: green; /* Temporary background color */
+  position: relative; /* For watermark positioning */
+  overflow: hidden; /* Prevent overflow issues */
 }
+
 .about__body {
   display: flex;
-  flex-direction: row; /* Horizontally align image and text */
-  align-items: center; /* Center content vertically */
-  justify-content: space-between; /* Space out image and text */
+  flex-direction: row; /* Image and text side by side */
+  align-items: center; /* Center vertically */
+  justify-content: space-between; /* Distribute space evenly */
   width: 100%;
-  max-width: 1200px;
-  position: relative; /* Ensure watermark is positioned correctly */
-  height: 100%; /* Matches the height of the parent section */
+  max-width: 1200px; /* Control max width */
 }
 
 .about__image {
-  flex: 1; /* Take up half the width */
-  height: 100%; /* Match the height of .about__body */
-  display: flex; /* Ensure the image is centered */
+  flex: 1; /* Occupy half the width */
+  display: flex; /* Center image */
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .about__image img {
-  width: 100%; /* Full width of its container */
-  height: 50%; /* Full height of its container */
-  object-fit: contain; /* Crop and maintain aspect ratio */
-  justify-content: end;
+  width: 80%; /* Make the image larger */
+  max-width: 500px; /* Prevent it from being too large */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Proper scaling */
 }
+
 .about__text {
-  text-align: start;
-  flex: 1; /* This will make text take up the remaining space */
-  padding-left: 20px; /* Space between image and text */
-  display: flex; /* Use flex for better alignment */
+  flex: 1; /* Text takes up more space */
+  padding-left: 40px; /* Add space between image and text */
+  display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .about__text h1 {
-  font-size: 3rem; /* Large title size */
+  font-size: 3.5rem; /* Increase font size */
   font-weight: bold;
-  margin: 0;
+  margin: 0 0 10px 0;
 }
 
 .about__text p {
-  font-size: 1rem;
+  font-size: 1.2rem; /* Slightly larger text */
   margin-top: 20px;
-  line-height: 1.5;
+  line-height: 1.8;
   text-align: justify;
 }
 
@@ -64,6 +63,7 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  align-self: flex-start; /* Align button to the left */
 }
 
 .about__button:hover {
@@ -72,12 +72,12 @@
 
 .about__watermark {
   position: absolute;
-  top: 20%;
-  left: 40%;
+  top: 40%; /* Position below main content */
+  left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%);
-  font-size: 8rem;
+  font-size: 10rem; /* Large text */
   font-weight: bold;
-  color: rgba(255, 255, 255, 0.1);
-  user-select: none;
-  z-index: 1;
+  color: red; /* Subtle watermark effect */
+  z-index: -1; /* Place below main content */
+  user-select: none; /* Make non-selectable */
 }
