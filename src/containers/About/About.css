@@ -94,3 +94,34 @@
   z-index: 1; /* Below content but above the background */
   user-select: none; /* Make non-selectable */
 }
+/* Tablet screen styles (768px to 1024px) */
+@media (max-width: 1100px) {
+  .about__body {
+    max-width: 80%; /* Slightly reduce max width */
+  }
+
+  .about__image img {
+    height: 80vh; /* Scale down image height */
+  }
+
+  .about__text {
+    padding-left: 20px; /* Reduce padding */
+  }
+
+  .about__text h1 {
+    font-size: 2.5rem; /* Decrease font size */
+  }
+
+  .about__text p {
+    font-size: 0.9rem; /* Reduce paragraph font size */
+  }
+
+  .about__button {
+    font-size: 0.9rem; /* Adjust button font size */
+    padding: 12px 40px; /* Scale button size */
+  }
+
+  .about__watermark {
+    font-size: 4rem; /* Decrease watermark size */
+  }
+}
