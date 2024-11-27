@@ -44,3 +44,32 @@
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px) {
+  /* Navbar changes for mobile */
+  .app__navbar {
+    position: fixed; /* Ensure it stays visible */
+    top: 0; /* Align at the top */
+    left: 0;
+    width: 100%; /* Full-width horizontal navbar */
+    height: auto; /* Adjust height to fit content */
+    flex-direction: row; /* Switch to horizontal layout */
+    justify-content: space-evenly; /* Space items evenly */
+    align-items: center;
+    transform: none;
+    padding: 20px 0;
+    overflow-x: auto; /* Allow scrolling if necessary */
+  }
+
+  .app__navbar-links {
+    flex-direction: row; /* Display links in a row */
+    height: auto; /* Remove fixed height */
+  }
+
+  .app__navbar-links li {
+    padding: 0 15px; /* Adjust padding for horizontal layout */
+  }
+
+  .app__navbar-links .navbar-item-wrapper {
+    transform: rotate(0); /* Remove rotation for horizontal layout */
+  }
+}

@@ -27,3 +27,26 @@
 .app__social-icon:hover {
   color: var(--color-primary-orange); /* Change color on hover */
 }
+/* Mobile styles (max-width: 768px) */
+@media (max-width: 768px) {
+  .app__social {
+    bottom: 0; /* Move to the bottom of the screen */
+    right: 0; /* Align to the bottom-right corner */
+    top: auto; /* Remove the top property */
+    transform: none; /* Remove any transformation */
+    width: 100%; /* Full width across the bottom */
+    height: auto; /* Adjust height */
+    flex-direction: row; /* Align icons in a horizontal row */
+    justify-content: center; /* Center the icons horizontally */
+    padding: 0.5rem 0; /* Adjust padding for the bottom bar */
+  }
+
+  .app_social-dash {
+    width: 10%;
+    height: 2px;
+  }
+
+  .app__social-icon {
+    margin: 0 15px; /* Horizontal spacing between icons */
+  }
+}
