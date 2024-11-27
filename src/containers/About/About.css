@@ -125,3 +125,112 @@
     font-size: 4rem; /* Decrease watermark size */
   }
 }
+
+/* Mobile screen styles (max-width: 768px) */
+@media (max-width: 768px) {
+  .about__body {
+    flex-direction: column; /* Stack the image and text vertically */
+    justify-content: center; /* Center content */
+    align-items: center; /* Align everything to the center */
+    max-width: 100%; /* Use the full width of the screen */
+    padding: 2rem; /* Add some padding for spacing */
+  }
+
+  .about__image {
+    width: 100%; /* Full width for the image container */
+    height: 80%; /* Automatically adjust height */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: flex-end;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem; /* Space between the image and text */
+  }
+
+  .about__image img {
+    width: 100%; /* Image takes full width */
+    max-width: 300px; /* Limit maximum size for better appearance */
+    height: 40%; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure proper scaling */
+  }
+
+  .about__text {
+    width: 100%; /* Text takes full width */
+    padding: 0; /* Remove side padding */
+    text-align: center; /* Center align the text for a clean look */
+  }
+
+  .about__text h1 {
+    font-size: 2rem; /* Adjust the font size */
+  }
+
+  .about__text p {
+    font-size: 0.9rem; /* Slightly smaller text for mobile */
+    line-height: 1.6; /* Adjust line height for readability */
+  }
+
+  .about__button {
+    font-size: 0.8rem; /* Adjust button font size */
+    padding: 10px 30px; /* Scale down the button size */
+    margin: 1rem auto 0; /* Center the button and add top margin */
+  }
+
+  .about__watermark {
+    font-size: 3rem; /* Decrease watermark size */
+    top: 10%; /* Adjust the position slightly */
+    transform: none; /* Ensure it stays properly aligned */
+    text-align: center; /* Center watermark text */
+    width: 100%; /* Span the full width */
+    opacity: 0.1; /* Subtle watermark effect */
+  }
+}
+
+/* Extra small screen styles (max-width: 375px) */
+@media (max-width: 450px) {
+  .about__body {
+    flex-direction: column; /* Stack the image and text vertically */
+    justify-content: center;
+    align-items: center;
+    max-width: 100%; /* Full width */
+  }
+
+  .about__image {
+    width: 100%; /* Full width */
+    height: auto; /* Let height adjust naturally based on aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .about__image img {
+    width: 70%; /* Slightly smaller image width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure proper scaling */
+  }
+
+  .about__text {
+    width: 100%; /* Full width */
+    padding: 0; /* Remove padding */
+    text-align: center; /* Center text */
+  }
+
+  .about__text h1 {
+    font-size: 1.5rem; /* Reduce heading size */
+  }
+
+  .about__text p {
+    font-size: 0.8rem; /* Smaller paragraph font size */
+    line-height: 1.5; /* Adjust line height */
+  }
+
+  .about__button {
+    font-size: 0.7rem; /* Reduce button font size */
+    padding: 8px 20px; /* Scale down button padding */
+    margin: 0.5rem auto 0; /* Adjust spacing around button */
+  }
+
+  .about__watermark {
+    font-size: 5rem; /* Reduce watermark size */
+    top: 5%; /* Adjust position slightly */
+    text-align: center; /* Center the watermark */
+  }
+}

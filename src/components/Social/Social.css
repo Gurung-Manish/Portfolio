@@ -42,11 +42,37 @@
   }
 
   .app_social-dash {
+    width: 20%;
+    height: 2px;
+  }
+
+  .app__social-icon {
+    font-size: 1rem;
+    margin: 0 15px; /* Horizontal spacing between icons */
+  }
+}
+
+/* Extra small screen styles (max-width: 375px) */
+@media (max-width: 380px) {
+  .app__social {
+    bottom: 0; /* Move to the bottom of the screen */
+    right: 0; /* Align to the bottom-right corner */
+    top: auto; /* Remove the top property */
+    transform: none; /* Remove any transformation */
+    width: 100%; /* Full width across the bottom */
+    height: auto; /* Adjust height */
+    flex-direction: row; /* Align icons in a horizontal row */
+    justify-content: center; /* Center the icons horizontally */
+    padding: 0.5rem 0; /* Adjust padding for the bottom bar */
+  }
+
+  .app_social-dash {
     width: 10%;
     height: 2px;
   }
 
   .app__social-icon {
+    font-size: 1rem;
     margin: 0 15px; /* Horizontal spacing between icons */
   }
 }
