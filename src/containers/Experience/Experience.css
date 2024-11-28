@@ -1,5 +1,5 @@
 .experience {
-  background-color: darkslategrey;
+  background-color: var(--color-bg-black); /* Temporary background color */
   min-height: 100vh;
   color: white;
   padding: 2rem;
@@ -12,6 +12,8 @@
   display: flex;
   width: 80%;
   margin: 2rem auto;
+  max-width: 1000px; /* Optional: Limit container width */
+  margin: auto; /* Center horizontally */
 }
 
 .experience__sidebar {
@@ -19,19 +21,21 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: end;
 }
 
 .experience__company {
   cursor: pointer;
   padding: 1rem;
-  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 .experience__company:hover,
 .experience__company--active {
+  font-weight: bold;
   border-color: white;
-  color: lightblue;
+  color: var(--color-primary-orange);
 }
 
 .experience__separator {
@@ -47,6 +51,7 @@
 .experience__title {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  color: var(--color-primary-orange);
 }
 
 .experience__dates {
@@ -62,4 +67,12 @@
 
 .experience__description li {
   margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1rem; /* Add space for custom bullet */
+}
+.experience__description li::before {
+  content: "-"; /* Custom bullet point */
+  position: absolute;
+  left: 0;
+  color: var(--color-primary-orange); /* Bullet color */
 }
