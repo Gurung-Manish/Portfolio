@@ -175,12 +175,11 @@
   }
 
   .about__watermark {
-    font-size: 3rem; /* Decrease watermark size */
+    font-size: 2rem; /* Decrease watermark size */
     top: 10%; /* Adjust the position slightly */
     transform: none; /* Ensure it stays properly aligned */
     text-align: center; /* Center watermark text */
     width: 100%; /* Span the full width */
-    opacity: 0.1; /* Subtle watermark effect */
   }
 }
 
@@ -229,7 +228,7 @@
   }
 
   .about__watermark {
-    font-size: 5rem; /* Reduce watermark size */
+    font-size: 2rem; /* Reduce watermark size */
     top: 5%; /* Adjust position slightly */
     text-align: center; /* Center the watermark */
   }
