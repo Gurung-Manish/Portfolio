@@ -1,7 +1,9 @@
 import React from "react";
 import "./Contact.css";
 const Contact = () => {
-  const handleContact = () => {};
+  const handleContact = () => {
+    window.location.href = "mailto:manishgrg496@gmail.com";
+  };
 
   return (
     <div className="contact" id="contact">
