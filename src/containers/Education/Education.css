@@ -1,4 +1,105 @@
+/* Education section styling */
 .education {
   background-color: bisque;
   min-height: 100vh;
+  padding: 50px 20px;
+  position: relative;
+}
+
+/* Section title */
+.education__title {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Vertical line */
+.education__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: #aaa;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Education items container */
+.education__item {
+  position: relative;
+  width: 50%;
+  margin-bottom: 50px;
+  z-index: 2;
+}
+
+/* Alternating positioning */
+.education__item--left {
+  left: 0;
+  text-align: right;
+}
+
+.education__item--right {
+  left: 50%;
+}
+
+/* Content box */
+.education__content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+/* Align content based on position */
+.education__item--left .education__content {
+  transform: translateX(-10%);
+}
+
+.education__item--right .education__content {
+  transform: translateX(10%);
+}
+
+/* Date */
+.education__date {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Institution name */
+.education__institution {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* Degree, Score, Place */
+.education__degree,
+.education__score,
+.education__place {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .education__item {
+    width: 100%;
+  }
+
+  .education__item--left .education__content,
+  .education__item--right .education__content {
+    transform: translateX(0);
+  }
+
+  .education__line {
+    left: 10px;
+  }
 }
