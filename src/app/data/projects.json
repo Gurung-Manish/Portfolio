@@ -1,0 +1,42 @@
+[
+  {
+    "id": "betgenie-uk",
+    "title": "BetGenie UK",
+    "images": ["/projects/betgenie1.png", "/projects/betgenie2.png"],
+    "summary": "A football sports website showing pre-game odds, historical head-to-head data, and prediction models.",
+    "background": "BetGenie is a football sports insights platform built to show pre-game odds and head-to-head data of teams from the past 5 years. It provides graphs of average stats, correlation data, and a backend prediction model that calculates the chance to win compared to bookmakers' odds.",
+    "details": "Developed with Next.js for the frontend, Python FastAPI for the backend, and PostgreSQL as the database. Deployed on PaaS providers such as Render, Vercel, and Supabase for seamless integration. Docker and GitHub CI/CD pipelines were used for efficient deployment and collaboration.",
+    "techStack": [
+      "Next.js",
+      "Python FastAPI",
+      "PostgreSQL",
+      "Figma",
+      "GitHub",
+      "Docker",
+      "Render",
+      "Vercel",
+      "Supabase"
+    ],
+    "work": [
+      "Led the complete development of the platform (full-stack) while coordinating with stakeholders to ensure functionality.",
+      "Created complete design work including wireframes, prototypes, web banners, and logo design.",
+      "Implemented backend models for odds prediction and historical data analysis.",
+      "Deployed application on multiple PaaS services with Dockerized CI/CD setup."
+    ],
+    "liveDemo": "https://betgenieuk.com"
+  },
+  {
+    "id": "byk-oxford",
+    "title": "BYK Oxford",
+    "images": ["/projects/byk1.png", "/projects/byk2.png"],
+    "summary": "A financial consultancy platform offering custom, transparent, and intelligent reporting solutions.",
+    "background": "BYK Oxford is a UK-based financial consultancy firm that blends financial expertise with technology to help businesses turn complex financial data into actionable insights. They specialize in custom reporting, KPI dashboards, and scalable financial models.",
+    "details": "The platform focuses on building confidence in numbers with tailor-made financial reports and KPIs designed for each business. Unlike generic templates, BYK Oxford provides clear, adaptive, and decision-oriented reporting tools.",
+    "techStack": ["Next.js", "Figma", "GitHub", "Vercel"],
+    "work": [
+      "Built the frontend in Next.js with a clean, professional UI tailored for consultancy.",
+      "Handled deployment across Vercel with CI/CD integration."
+    ],
+    "liveDemo": "https://bykoxford.com"
+  }
+]
