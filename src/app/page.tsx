@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div
-      className="grid grid-cols-1 gap-2 min-h-screen p-4 md:grid-cols-8"
+      className="grid grid-cols-1 gap-3 min-h-screen p-4 md:grid-cols-8"
       style={{
         gridTemplateRows: "auto 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr", // flexible row heights
         height: "100vh", // full viewport height
@@ -14,7 +14,7 @@ export default function Home() {
     >
       {/* Top Header */}
       <div
-        className="flex items-center justify-center rounded col-span-1 md:col-span-8"
+        className="flex items-center justify-center rounded-xl col-span-1 md:col-span-8"
         style={{ background: "var(--containerBackground)" }}
       >
         <Header />
@@ -22,7 +22,7 @@ export default function Home() {
 
       {/* Panel top left */}
       <div
-        className="flex items-center justify-center rounded col-span-1 md:col-span-4 md:row-span-5 md:row-start-2 min-h-0"
+        className="flex items-center justify-center rounded-xl col-span-1 md:col-span-4 md:row-span-5 md:row-start-2 min-h-0"
         style={{ background: "var(--containerBackground)" }}
       >
         <HeroText />
@@ -30,20 +30,20 @@ export default function Home() {
 
       {/* Panel top right Profile Image */}
       <div
-        className="relative flex items-center justify-center rounded col-span-1 md:col-span-2 md:col-start-5 md:row-span-5 md:row-start-2 overflow-hidden w-full h-full"
+        className="relative flex items-center justify-center rounded-xl col-span-1 md:col-span-2 md:col-start-5 md:row-span-5 md:row-start-2 overflow-hidden w-full h-full"
         style={{ background: "#4b4941" }}
       >
         <Image
           src="/profile_image.png"
           alt="Manish Gurung"
           fill
-          className="object-contain"
+          className="object-cover"
         />
       </div>
 
       {/* Panel bottom left */}
       <div
-        className="flex items-center justify-center rounded col-span-1 md:col-span-3 md:col-start-1 md:row-span-3 md:row-start-7 p-4 md:p-8"
+        className="flex items-center justify-center rounded-xl col-span-1 md:col-span-3 md:col-start-1 md:row-span-3 md:row-start-7 p-4 md:p-8"
         style={{ background: "var(--containerBackground)" }}
       >
         <p className="text-left text-gray-800 leading-relaxed text-sm sm:text-sm md:text-sm lg:text-lg xl:text-sm">
@@ -60,7 +60,7 @@ export default function Home() {
 
       {/* Panel bottom right contact */}
       <div
-        className="flex items-center justify-center rounded col-span-1 md:col-span-3 md:col-start-4 md:row-span-3 md:row-start-7 min-h-0"
+        className="flex items-center justify-center rounded-xl col-span-1 md:col-span-3 md:col-start-4 md:row-span-3 md:row-start-7 min-h-0"
         style={{ background: "#4b4941" }}
       >
         <ContactPanel />
@@ -68,7 +68,7 @@ export default function Home() {
 
       {/* Panel right sidebar project container */}
       <div
-        className="flex items-center justify-center rounded col-span-1 md:col-span-2 md:col-start-7 md:row-span-7 md:row-start-2 text-white min-h-0"
+        className="flex items-center justify-center rounded-xl col-span-1 md:col-span-2 md:col-start-7 md:row-span-7 md:row-start-2 text-white min-h-0"
         style={{ background: "var(--containerBackground)" }}
       >
         15
@@ -76,7 +76,7 @@ export default function Home() {
 
       {/* Panel bottommost right, social links */}
       <div
-        className="flex items-center justify-center rounded col-span-1 md:col-span-2 md:col-start-7 md:row-start-9 text-white min-h-0"
+        className="flex items-center justify-center rounded-xl col-span-1 md:col-span-2 md:col-start-7 md:row-start-9 text-white min-h-0"
         style={{ background: "var(--containerBackground)" }}
       >
         <SocialLinks />
