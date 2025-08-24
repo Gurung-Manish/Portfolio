@@ -69,7 +69,10 @@ export default function Home() {
               <p className="text-left text-gray-800 leading-relaxed text-sm sm:text-sm md:text-sm lg:text-lg xl:text-sm">
                 Hi, I’m <span className="font-bold">Manish Gurung!</span> a{" "}
                 <span className="font-bold">Software Engineer</span> who loves
-                turning ideas into real, usable software...
+                turning ideas into real, usable software. I enjoy collaborating
+                with teams, building scalable applications, and constantly
+                learning new technologies to improve workflows and user
+                experiences.
               </p>
             </div>
 

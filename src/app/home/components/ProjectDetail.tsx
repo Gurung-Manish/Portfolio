@@ -1,3 +1,8 @@
+import { useState, useRef } from "react";
+import { FiArrowUpRight } from "react-icons/fi";
+import Image from "next/image";
+import Link from "next/link";
+
 interface Project {
   id: string;
   title: string;
@@ -17,45 +22,102 @@ export default function ProjectDetail({
   project,
   onClose,
 }: ProjectDetailProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   if (!project) return null;
 
+  const scrollToIndex = (index: number) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const child = container.children[index] as HTMLElement;
+    if (child) {
+      container.scrollTo({
+        left: child.offsetLeft,
+        behavior: "smooth",
+      });
+      setCurrentIndex(index);
+    }
+  };
+
+  const prevImage = () => scrollToIndex(Math.max(currentIndex - 1, 0));
+  const nextImage = () =>
+    scrollToIndex(Math.min(currentIndex + 1, project.images.length - 1));
+
   return (
-    <div className="absolute inset-0 bg-white p-6 overflow-y-auto">
-      <button
-        onClick={onClose}
-        className="mb-4 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition"
-      >
-        Close
-      </button>
+    <div className="absolute inset-0 bg-[#4b4941] p-6 overflow-hidden text-white">
+      {/* Top bar: title + X */}
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-2xl font-bold">{project.title}</h2>
+        <button
+          onClick={onClose}
+          className="text-white text-2xl font-bold hover:text-gray-300 transition"
+        >
+          ×
+        </button>
+      </div>
 
-      <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
-      <p className="mb-4">{project.background}</p>
-      <p className="mb-4">{project.details}</p>
+      {/* Project background */}
+      <p className="mb-6">{project.background}</p>
 
-      <ul className="list-disc pl-6 mb-4">
-        {project.work.map((item, i) => (
-          <li key={i}>{item}</li>
-        ))}
-      </ul>
+      {/* Main content: left details (60%), right images (40%) */}
+      <div className="flex gap-6">
+        {/* Left column: 60% */}
+        <div className="flex-1 max-w-[60%]">
+          <p className="mb-4">{project.details}</p>
+          <ul className="list-disc pl-6 space-y-2">
+            {project.work.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </div>
 
-      {project.images.map((img, i) => (
-        <img
-          key={i}
-          src={img}
-          alt={project.title}
-          className="mb-4 rounded-xl"
-        />
-      ))}
+        {/* Right column: 40% */}
+        <div className="flex-1 max-w-[40%] relative">
+          {/* Carousel buttons */}
+          <button
+            onClick={prevImage}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white px-2 py-1 rounded hover:bg-opacity-60 z-10"
+          >
+            ‹
+          </button>
+          <button
+            onClick={nextImage}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white px-2 py-1 rounded hover:bg-opacity-60 z-10"
+          >
+            ›
+          </button>
 
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-hidden scroll-smooth"
+          >
+            {project.images.map((img, i) => (
+              <Image
+                key={i}
+                src={img}
+                alt={project.title}
+                width={100}
+                height={100}
+                className="rounded-xl object-cover flex-shrink-0 w-[300px] h-[200px]"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* Live demo link */}
       {project.liveDemo && (
-        <a
+        <Link
           href={project.liveDemo}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 underline"
+          className="inline-flex flex-col mt-4 text-white group"
         >
-          View Live Demo
-        </a>
+          <span className="inline-flex items-center px-4 py-2 transition group-hover:text-gray-300">
+            View Live Demo <FiArrowUpRight className="ml-2" />
+          </span>
+          <span className="block h-[2px] w-full bg-white mt-1 group-hover:bg-gray-300 transition"></span>
+        </Link>
       )}
     </div>
   );
