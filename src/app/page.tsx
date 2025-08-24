@@ -2,7 +2,7 @@ import Header from "@/app/home/components/Header";
 import SocialLinks from "@/app/home/components/SocialLinks";
 import HeroText from "@/app/home/components/HeroText";
 import ContactPanel from "@/app/home/components/ContactPanel";
-
+import Image from "next/image";
 export default function Home() {
   return (
     <div
@@ -29,8 +29,16 @@ export default function Home() {
       </div>
 
       {/* Panel top right Profile Image */}
-      <div className="bg-gray-500 flex items-center justify-center rounded col-span-1 md:col-span-2 md:col-start-5 md:row-span-5 md:row-start-2 min-h-0">
-        12
+      <div
+        className="relative flex items-center justify-center rounded col-span-1 md:col-span-2 md:col-start-5 md:row-span-5 md:row-start-2 overflow-hidden w-full h-full"
+        style={{ background: "#4b4941" }}
+      >
+        <Image
+          src="/profile_image.png"
+          alt="Manish Gurung"
+          fill
+          className="object-contain"
+        />
       </div>
 
       {/* Panel bottom left */}
