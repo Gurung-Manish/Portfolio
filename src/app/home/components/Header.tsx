@@ -8,10 +8,10 @@ export default function Header() {
 
       {/* Right: Nav Links */}
       <nav className="space-x-6 text-md">
-        <a href="#about" className="hover:underline">
+        <a href="#about" className="font-semibold hover:underline">
           About
         </a>
-        <a href="#contact" className="hover:underline">
+        <a href="#contact" className="font-semibold hover:underline">
           Contact
         </a>
       </nav>
