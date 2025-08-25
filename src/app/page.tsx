@@ -11,7 +11,16 @@ import projectsData from "@/app/data/projects.json";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
   const project = projectsData.find((p) => p.id === selectedProject);
+
+  const handleClose = () => {
+    setIsClosing(true); // start exit animation
+    setTimeout(() => {
+      setSelectedProject(null); // actually unmount
+      setIsClosing(false); // reset
+    }, 500); // match your CSS duration
+  };
 
   return (
     <div
@@ -36,8 +45,11 @@ export default function Home() {
           <div className="grid grid-cols-6 grid-rows-8 gap-3 h-full">
             {/* HeroText panel */}
             <div
-              className={`flex items-center justify-center rounded-xl col-span-4 row-span-5 min-h-0 transition-all duration-500 transform ${
-                selectedProject ? "scale-90 translate-x-[-20%] opacity-50" : ""
+              className={`flex items-center justify-center rounded-xl col-span-4 row-span-5 min-h-0 transition-all duration-500 transform 
+              ${
+                selectedProject || isClosing
+                  ? "scale-0 translate-x-[-50%] opacity-0"
+                  : ""
               }`}
               style={{ background: "var(--containerBackground)" }}
             >
@@ -47,7 +59,9 @@ export default function Home() {
             {/* Profile Image panel */}
             <div
               className={`relative flex items-center justify-center rounded-xl col-span-2 row-span-5 overflow-hidden w-full h-full transition-all duration-500 transform ${
-                selectedProject ? "scale-90 translate-x-[20%] opacity-50" : ""
+                selectedProject || isClosing
+                  ? "scale-0 translate-y-[-50%] opacity-0"
+                  : ""
               }`}
               style={{ background: "#4b4941" }}
             >
@@ -62,7 +76,9 @@ export default function Home() {
             {/* Short intro panel */}
             <div
               className={`flex items-center justify-center rounded-xl col-span-3 row-span-3 p-4 md:p-8 transition-all duration-500 transform ${
-                selectedProject ? "scale-90 translate-y-[-20%] opacity-50" : ""
+                selectedProject || isClosing
+                  ? "scale-0 translate-x-[50%] opacity-0"
+                  : ""
               }`}
               style={{ background: "var(--containerBackground)" }}
             >
@@ -79,7 +95,9 @@ export default function Home() {
             {/* Contact Panel */}
             <div
               className={`flex items-center justify-center rounded-xl col-span-3 row-span-3 min-h-0 transition-all duration-500 transform ${
-                selectedProject ? "scale-90 translate-y-[20%] opacity-50" : ""
+                selectedProject || isClosing
+                  ? "scale-0 translate-y-[-50%] opacity-0"
+                  : ""
               }`}
               style={{ background: "#4b4941" }}
             >
@@ -90,11 +108,11 @@ export default function Home() {
 
         {/* Project Detail panel */}
         {selectedProject && project && (
-          <div className="absolute inset-0 bg-white rounded-xl shadow-lg overflow-auto animate-slide-in">
-            <ProjectDetail
-              project={project}
-              onClose={() => setSelectedProject(null)}
-            />
+          <div
+            className={`absolute inset-0 bg-white rounded-xl shadow-lg overflow-auto 
+    ${isClosing ? "animate-slide-out" : "animate-slide-in"}`}
+          >
+            <ProjectDetail project={project} onClose={handleClose} />
           </div>
         )}
       </div>

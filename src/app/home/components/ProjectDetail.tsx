@@ -65,6 +65,7 @@ export default function ProjectDetail({
         {/* Left column: 60% */}
         <div className="flex-1 max-w-[60%]">
           <p className="mb-4">{project.details}</p>
+          <h2 className="text-xl mb-4">Project Contributions</h2>
           <ul className="list-disc pl-6 space-y-2">
             {project.work.map((item, i) => (
               <li key={i}>{item}</li>
