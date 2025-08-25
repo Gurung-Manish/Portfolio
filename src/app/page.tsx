@@ -19,29 +19,30 @@ export default function Home() {
   const handleContactOpen = () => setIsContactOpen(true);
 
   const handleClose = () => {
-    setIsClosing(true); // start exit animation
+    setIsClosing(true);
     setTimeout(() => {
-      setSelectedProject(null); // actually unmount
-      setIsClosing(false); // reset
-    }, 500); // match your CSS duration
+      setSelectedProject(null);
+      setIsClosing(false);
+    }, 500);
   };
 
   const handleContactClose = () => {
-    setIsContactClosing(true); // start exit animation
+    setIsContactClosing(true);
     setTimeout(() => {
-      setIsContactOpen(false); // actually unmount
-      setIsContactClosing(false); // reset
-    }, 500); // match your CSS duration
+      setIsContactOpen(false);
+      setIsContactClosing(false);
+    }, 500);
   };
+
   return (
     <div
-      className="grid grid-cols-1 gap-3 min-h-screen p-4 md:grid-cols-8"
+      className="grid grid-cols-1 gap-6 md:gap-3 min-h-screen p-4 md:grid-cols-8"
       style={{
         gridTemplateRows: "auto 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr",
-        height: "100vh",
+        height: "100vh", // keeps laptop/tablet full viewport
       }}
     >
-      {/* Header (always visible) */}
+      {/* Header */}
       <div
         className="flex items-center justify-center rounded-xl col-span-1 md:col-span-8"
         style={{ background: "var(--containerBackground)" }}
@@ -50,82 +51,67 @@ export default function Home() {
       </div>
 
       {/* Middle panels wrapper */}
-      <div className="relative col-span-1 md:col-span-6 md:row-start-2 md:row-span-8 overflow-hidden">
-        {/* Original panels */}
-        <div className="absolute w-full h-full">
-          <div className="grid grid-cols-6 grid-rows-8 gap-3 h-full">
-            {/* HeroText panel */}
-            <div
-              className={`flex items-center justify-center rounded-xl col-span-4 row-span-5 min-h-0 transition-all duration-500 transform 
-              ${
-                selectedProject ||
-                isClosing ||
-                isContactOpen ||
-                isContactClosing
-                  ? "scale-0 translate-x-[-50%] opacity-0"
-                  : ""
-              }`}
-              style={{ background: "var(--containerBackground)" }}
-            >
-              <HeroText />
-            </div>
+      <div className="relative col-span-1 md:col-span-6 md:row-start-2 md:row-span-8 overflow-visible md:overflow-hidden">
+        <div className="w-full h-full md:static md:grid md:grid-cols-6 md:grid-rows-8 gap-6 md:gap-3">
+          {/* HeroText panel */}
+          <div
+            className={`flex items-center justify-center rounded-xl col-span-4 row-span-5 min-h-[150px] md:min-h-0 transition-all duration-500 transform 
+            ${
+              selectedProject || isClosing || isContactOpen || isContactClosing
+                ? "scale-0 md:translate-x-[-50%] opacity-0"
+                : ""
+            }`}
+            style={{ background: "var(--containerBackground)" }}
+          >
+            <HeroText />
+          </div>
 
-            {/* Profile Image panel */}
-            <div
-              className={`relative flex items-center justify-center rounded-xl col-span-2 row-span-5 overflow-hidden w-full h-full transition-all duration-500 transform ${
-                selectedProject ||
-                isClosing ||
-                isContactOpen ||
-                isContactClosing
-                  ? "scale-0 translate-y-[-50%] opacity-0"
-                  : ""
-              }`}
-              style={{ background: "#4b4941" }}
-            >
-              <Image
-                src="/profile_image.png"
-                alt="Manish Gurung"
-                fill
-                className="object-cover"
-              />
-            </div>
+          {/* Profile Image panel */}
+          <div
+            className={`relative flex items-center justify-center rounded-xl col-span-2 row-span-5 overflow-hidden w-full h-[200px] md:h-full transition-all duration-500 transform ${
+              selectedProject || isClosing || isContactOpen || isContactClosing
+                ? "scale-0 md:translate-y-[-50%] opacity-0"
+                : ""
+            }`}
+            style={{ background: "#4b4941" }}
+          >
+            <Image
+              src="/profile_image.png"
+              alt="Manish Gurung"
+              fill
+              className="object-cover"
+            />
+          </div>
 
-            {/* Short intro panel */}
-            <div
-              className={`flex items-center justify-center rounded-xl col-span-3 row-span-3 p-4 md:p-8 transition-all duration-500 transform ${
-                selectedProject ||
-                isClosing ||
-                isContactOpen ||
-                isContactClosing
-                  ? "scale-0 translate-x-[50%] opacity-0"
-                  : ""
-              }`}
-              style={{ background: "var(--containerBackground)" }}
-            >
-              <p className="text-left text-gray-800 leading-relaxed text-xs lg:text-sm">
-                “ Hi, I’m <span className="font-bold">Manish Gurung!</span> a{" "}
-                <span className="font-bold">Software Engineer</span> who loves
-                turning ideas into real, usable software. I enjoy collaborating
-                with teams, building scalable applications, and constantly
-                learning new technologies to improve workflows and user
-                experiences. ”
-              </p>
-            </div>
+          {/* Short intro panel */}
+          <div
+            className={`flex items-center justify-center rounded-xl col-span-1 md:col-span-3 row-span-1 md:row-span-3 p-4 md:p-8 transition-all duration-500 transform ${
+              selectedProject || isClosing || isContactOpen || isContactClosing
+                ? "scale-0 md:translate-x-[50%] opacity-0"
+                : ""
+            }`}
+            style={{ background: "var(--containerBackground)" }}
+          >
+            <p className="text-left text-gray-800 leading-relaxed text-xs lg:text-sm break-words w-full max-w-full">
+              “ Hi, I’m <span className="font-bold">Manish Gurung!</span> a{" "}
+              <span className="font-bold">Software Engineer</span> who loves
+              turning ideas into real, usable software. I enjoy collaborating
+              with teams, building scalable applications, and constantly
+              learning new technologies to improve workflows and user
+              experiences. ”
+            </p>
+          </div>
 
-            {/* Contact Panel */}
-            <div
-              className={`flex items-center justify-center rounded-xl col-span-3 row-span-3 min-h-0 transition-all duration-500 transform ${
-                selectedProject ||
-                isClosing ||
-                isContactOpen ||
-                isContactClosing
-                  ? "scale-0 translate-y-[-50%] opacity-0"
-                  : ""
-              }`}
-              style={{ background: "#4b4941" }}
-            >
-              <ContactPanel onClick={() => setIsContactOpen(true)} />
-            </div>
+          {/* Contact Panel */}
+          <div
+            className={`flex items-center justify-center rounded-xl col-span-1 md:col-span-3 row-span-1 md:row-span-3 min-h-[100px] md:min-h-0 transition-all duration-500 transform ${
+              selectedProject || isClosing || isContactOpen || isContactClosing
+                ? "scale-0 md:translate-y-[-50%] opacity-0"
+                : ""
+            }`}
+            style={{ background: "#4b4941" }}
+          >
+            <ContactPanel onClick={() => setIsContactOpen(true)} />
           </div>
         </div>
 
@@ -152,15 +138,15 @@ export default function Home() {
 
       {/* Right sidebar Projects */}
       <div
-        className="flex items-center justify-center rounded-xl col-span-1 md:col-span-2 md:col-start-7 md:row-span-7 md:row-start-2 text-white min-h-0"
+        className="flex items-center justify-center rounded-xl col-span-1 md:col-span-2 md:col-start-7 md:row-span-7 md:row-start-2 text-white min-h-[100px] md:min-h-0"
         style={{ background: "var(--containerBackground)" }}
       >
         <Projects onSelect={(id) => setSelectedProject(id)} />
       </div>
 
-      {/* Social Links (always visible) */}
+      {/* Social Links */}
       <div
-        className="flex items-center justify-center rounded-xl col-span-1 md:col-span-2 md:col-start-7 md:row-start-9 text-white min-h-0"
+        className="flex items-center justify-center rounded-xl col-span-1 md:col-span-2 md:col-start-7 md:row-start-9 text-white min-h-[50px] md:min-h-0"
         style={{ background: "var(--containerBackground)" }}
       >
         <SocialLinks />
