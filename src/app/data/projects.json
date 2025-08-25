@@ -39,5 +39,28 @@
       "Handled deployment across Vercel with CI/CD integration."
     ],
     "liveDemo": "https://bykoxford.com"
+  },
+  {
+    "id": "handyman-app",
+    "title": "Handyman App",
+    "images": [
+      "/handyman1.png",
+      "/handyman2.png",
+      "/handyman3.png",
+      "/handyman4.png",
+      "/handyman5.png",
+      "/handyman6.png"
+    ],
+    "summary": "A cross-platform app to connect customers with nearby service providers using CRUD functionality and location-based search.",
+    "background": "Handyman App is a mobile application built as a Master's final academic project. It allows customers to find service providers within a selectable range using Google Maps API and manage services efficiently. The app performs basic CRUD operations to store customer and service provider data.",
+    "details": "Developed using Flutter for cross-platform mobile development, Node.js for backend RESTful APIs, and MongoDB for database storage. Postman was used for API testing and validation. The project followed a complete SDLC including requirement gathering, research, competitor analysis, wireframing, and design.",
+    "techStack": ["Flutter", "Node.js", "MongoDB", "Postman", "Figma"],
+    "work": [
+      "Conducted research and comparison with similar apps to define requirements.",
+      "Completed full Software Development Life Cycle (SDLC) for the project.",
+      "Designed wireframes and UI for intuitive user experience.",
+      "Implemented CRUD functionality for customers and service providers.",
+      "Integrated Google Maps API to locate nearest service providers within a selectable range."
+    ]
   }
 ]

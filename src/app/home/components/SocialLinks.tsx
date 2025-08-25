@@ -1,15 +1,14 @@
-// app/home/components/SocialLinks.tsx
 import { FaGithub, FaLinkedin, FaYoutube, FaEnvelope } from "react-icons/fa";
 
 export default function SocialLinks() {
   return (
-    <div className="flex space-x-6">
+    <div className="flex justify-center md:justify-start items-center gap-1 lg:gap-4 px-2 md:px-0">
       {/* GitHub */}
       <a
         href="https://github.com/Gurung-Manish"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-black text-2xl p-2  hover:text-[#4b4941] transition"
+        className="text-black text-xl md:text-2xl p-1 md:p-2 hover:text-[#4b4941] transition-colors"
       >
         <FaGithub />
       </a>
@@ -19,17 +18,17 @@ export default function SocialLinks() {
         href="https://www.linkedin.com/in/-manish-gurung/"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-black text-2xl p-2  hover:text-[#4b4941] transition"
+        className="text-black text-xl md:text-2xl p-1 md:p-2 hover:text-[#4b4941] transition-colors"
       >
         <FaLinkedin />
       </a>
 
       {/* YouTube */}
       <a
-        href="https://www.youtube.com/@_manish_gurung_" // replace with your channel URL
+        href="https://www.youtube.com/@_manish_gurung_"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-black text-2xl p-2 hover:text-[#4b4941] transition-colors"
+        className="text-black text-xl md:text-2xl p-1 md:p-2 hover:text-[#4b4941] transition-colors"
       >
         <FaYoutube />
       </a>
@@ -37,7 +36,7 @@ export default function SocialLinks() {
       {/* Email */}
       <a
         href="mailto:manishgrg496@gmail.com"
-        className="text-black text-2xl p-2 hover:text-[#4b4941] transition"
+        className="text-black text-xl md:text-2xl p-1 md:p-2 hover:text-[#4b4941] transition-colors"
       >
         <FaEnvelope />
       </a>

@@ -110,15 +110,20 @@ export default function ProjectDetail({
             className="flex gap-4 overflow-x-auto scroll-smooth touch-pan-x hide-scrollbar"
           >
             {project.images.map((img, i) => (
-              <Image
+              <div
                 key={i}
-                src={img}
-                alt={project.title}
-                width={1000}
-                height={600}
-                quality={100}
-                className="rounded-xl object-cover flex-shrink-0 w-[600px] h-[200px]"
-              />
+                className="flex-shrink-0 rounded-xl overflow-hidden"
+                style={{ height: "250px", width: "auto" }} // height fixed, width adapts
+              >
+                <Image
+                  src={img}
+                  alt={project.title}
+                  width={600} // original image width
+                  height={400} // original image height
+                  quality={100}
+                  className="h-full w-auto object-contain rounded-xl"
+                />
+              </div>
             ))}
           </div>
         </div>

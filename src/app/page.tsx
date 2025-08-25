@@ -132,8 +132,8 @@ export default function Home() {
         {/* Project Detail panel */}
         {selectedProject && project && (
           <div
-            className={`absolute inset-0 bg-white rounded-xl shadow-lg overflow-auto 
-    ${isClosing ? "animate-slide-out" : "animate-slide-in"}`}
+            className={`absolute inset-0 rounded-xl shadow-lg overflow-auto 
+            ${isClosing ? "animate-slide-out" : "animate-slide-in"}`}
           >
             <ProjectDetail project={project} onClose={handleClose} />
           </div>
