@@ -1,4 +1,8 @@
-export default function Header() {
+interface HeaderProps {
+  onContactClick?: () => void;
+}
+
+export default function Header({ onContactClick }: HeaderProps) {
   return (
     <div className={`w-full flex justify-between items-center px-4 py-3 `}>
       {/* Left: Name */}
@@ -11,9 +15,12 @@ export default function Header() {
         <a href="#about" className="font-semibold hover:underline">
           About
         </a>
-        <a href="#contact" className="font-semibold hover:underline">
+        <button
+          onClick={onContactClick}
+          className="font-semibold hover:underline"
+        >
           Contact
-        </a>
+        </button>
       </nav>
     </div>
   );

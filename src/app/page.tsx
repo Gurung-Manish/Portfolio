@@ -8,11 +8,15 @@ import Projects from "@/app/home/components/Projects";
 import ProjectDetail from "@/app/home/components/ProjectDetail";
 import Image from "next/image";
 import projectsData from "@/app/data/projects.json";
+import ContactPage from "@/app/home/components/ContactPage";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isContactClosing, setIsContactClosing] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const project = projectsData.find((p) => p.id === selectedProject);
+  const handleContactOpen = () => setIsContactOpen(true);
 
   const handleClose = () => {
     setIsClosing(true); // start exit animation
@@ -22,6 +26,13 @@ export default function Home() {
     }, 500); // match your CSS duration
   };
 
+  const handleContactClose = () => {
+    setIsContactClosing(true); // start exit animation
+    setTimeout(() => {
+      setIsContactOpen(false); // actually unmount
+      setIsContactClosing(false); // reset
+    }, 500); // match your CSS duration
+  };
   return (
     <div
       className="grid grid-cols-1 gap-3 min-h-screen p-4 md:grid-cols-8"
@@ -35,7 +46,7 @@ export default function Home() {
         className="flex items-center justify-center rounded-xl col-span-1 md:col-span-8"
         style={{ background: "var(--containerBackground)" }}
       >
-        <Header />
+        <Header onContactClick={handleContactOpen} />
       </div>
 
       {/* Middle panels wrapper */}
@@ -47,7 +58,10 @@ export default function Home() {
             <div
               className={`flex items-center justify-center rounded-xl col-span-4 row-span-5 min-h-0 transition-all duration-500 transform 
               ${
-                selectedProject || isClosing
+                selectedProject ||
+                isClosing ||
+                isContactOpen ||
+                isContactClosing
                   ? "scale-0 translate-x-[-50%] opacity-0"
                   : ""
               }`}
@@ -59,7 +73,10 @@ export default function Home() {
             {/* Profile Image panel */}
             <div
               className={`relative flex items-center justify-center rounded-xl col-span-2 row-span-5 overflow-hidden w-full h-full transition-all duration-500 transform ${
-                selectedProject || isClosing
+                selectedProject ||
+                isClosing ||
+                isContactOpen ||
+                isContactClosing
                   ? "scale-0 translate-y-[-50%] opacity-0"
                   : ""
               }`}
@@ -76,7 +93,10 @@ export default function Home() {
             {/* Short intro panel */}
             <div
               className={`flex items-center justify-center rounded-xl col-span-3 row-span-3 p-4 md:p-8 transition-all duration-500 transform ${
-                selectedProject || isClosing
+                selectedProject ||
+                isClosing ||
+                isContactOpen ||
+                isContactClosing
                   ? "scale-0 translate-x-[50%] opacity-0"
                   : ""
               }`}
@@ -95,13 +115,16 @@ export default function Home() {
             {/* Contact Panel */}
             <div
               className={`flex items-center justify-center rounded-xl col-span-3 row-span-3 min-h-0 transition-all duration-500 transform ${
-                selectedProject || isClosing
+                selectedProject ||
+                isClosing ||
+                isContactOpen ||
+                isContactClosing
                   ? "scale-0 translate-y-[-50%] opacity-0"
                   : ""
               }`}
               style={{ background: "#4b4941" }}
             >
-              <ContactPanel />
+              <ContactPanel onClick={() => setIsContactOpen(true)} />
             </div>
           </div>
         </div>
@@ -114,6 +137,16 @@ export default function Home() {
           >
             <ProjectDetail project={project} onClose={handleClose} />
           </div>
+        )}
+
+        {/* Contact panel expanded */}
+        {isContactOpen && (
+          <ContactPage
+            onClose={handleContactClose}
+            animationClass={
+              isContactClosing ? "animate-slide-out" : "animate-slide-in"
+            }
+          />
         )}
       </div>
 
