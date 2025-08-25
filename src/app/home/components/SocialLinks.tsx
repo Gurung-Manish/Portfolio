@@ -1,5 +1,5 @@
 // app/home/components/SocialLinks.tsx
-import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaYoutube, FaEnvelope } from "react-icons/fa";
 
 export default function SocialLinks() {
   return (
@@ -32,6 +32,14 @@ export default function SocialLinks() {
         className="text-black text-2xl p-2 hover:text-[#4b4941] transition-colors"
       >
         <FaYoutube />
+      </a>
+
+      {/* Email */}
+      <a
+        href="mailto:manishgrg496@gmail.com"
+        className="text-black text-2xl p-2 hover:text-[#4b4941] transition"
+      >
+        <FaEnvelope />
       </a>
     </div>
   );

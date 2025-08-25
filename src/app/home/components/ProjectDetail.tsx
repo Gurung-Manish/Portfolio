@@ -9,6 +9,7 @@ interface Project {
   images: string[];
   background: string;
   details: string;
+  techStack: string[];
   work: string[];
   liveDemo?: string;
 }
@@ -57,6 +58,21 @@ export default function ProjectDetail({
         </button>
       </div>
 
+      {/* Tech Stack */}
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold mb-2">Tech Stack</h3>
+        <div className="flex flex-wrap gap-2">
+          {project.techStack?.map((tech, i) => (
+            <span
+              key={i}
+              className="px-3 py-1 bg-white/10 rounded-full text-sm hover:bg-white/20 transition"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* Project background */}
       <p className="mb-6">{project.background}</p>
 
@@ -91,16 +107,17 @@ export default function ProjectDetail({
 
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-hidden scroll-smooth"
+            className="flex gap-4 overflow-x-auto scroll-smooth touch-pan-x hide-scrollbar"
           >
             {project.images.map((img, i) => (
               <Image
                 key={i}
                 src={img}
                 alt={project.title}
-                width={100}
-                height={100}
-                className="rounded-xl object-cover flex-shrink-0 w-[300px] h-[200px]"
+                width={1000}
+                height={600}
+                quality={100}
+                className="rounded-xl object-cover flex-shrink-0 w-[600px] h-[200px]"
               />
             ))}
           </div>
