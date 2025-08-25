@@ -11,13 +11,13 @@ export default function ContactPanel({ onClick }: ContactPanelProps) {
       onClick={onClick} // <-- handle opening panel
     >
       {/* Top text */}
-      <h2 className="text-md text-gray-200 mb-2">
+      <h2 className="text-gray-200 text-sm lg:text-lg">
         Have some <br /> questions?
       </h2>
 
       {/* Bottom row: text left, arrow right */}
       <div className="flex items-center justify-between w-full">
-        <h1 className="text-6xl text-white transition-colors duration-300">
+        <h1 className="text-5xl lg:text-6xl text-white transition-colors duration-300">
           <span className="font-semibold">Contact </span>
           <span className="italic">me</span>
         </h1>

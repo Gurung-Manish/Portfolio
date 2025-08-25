@@ -102,7 +102,7 @@ export default function Home() {
               }`}
               style={{ background: "var(--containerBackground)" }}
             >
-              <p className="text-left text-gray-800 leading-relaxed text-sm sm:text-sm md:text-sm lg:text-lg xl:text-sm">
+              <p className="text-left text-gray-800 leading-relaxed text-xs lg:text-sm">
                 “ Hi, I’m <span className="font-bold">Manish Gurung!</span> a{" "}
                 <span className="font-bold">Software Engineer</span> who loves
                 turning ideas into real, usable software. I enjoy collaborating
@@ -133,7 +133,7 @@ export default function Home() {
         {selectedProject && project && (
           <div
             className={`absolute inset-0 rounded-xl shadow-lg overflow-auto 
-            ${isClosing ? "animate-slide-out" : "animate-slide-in"}`}
+          ${isClosing ? "animate-slide-out" : "animate-slide-in"}`}
           >
             <ProjectDetail project={project} onClose={handleClose} />
           </div>
