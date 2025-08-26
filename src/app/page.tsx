@@ -52,7 +52,7 @@ export default function Home() {
 
       {/* Middle panels wrapper */}
       <div className="relative col-span-1 md:col-span-6 md:row-start-2 md:row-span-8 overflow-visible md:overflow-hidden">
-        <div className="w-full h-full md:static md:grid md:grid-cols-6 md:grid-rows-8 gap-6 md:gap-3">
+        <div className="w-full h-full flex flex-col space-y-5 md:space-y-0 md:grid md:grid-cols-6 md:grid-rows-8 md:gap-3">
           {/* HeroText panel */}
           <div
             className={`flex items-center justify-center rounded-xl col-span-4 row-span-5 min-h-[150px] md:min-h-0 transition-all duration-500 transform 
